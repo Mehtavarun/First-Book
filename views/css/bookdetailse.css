@@ -1,0 +1,181 @@
+body{
+	font-family: sans-serif;
+	background-image: url("../images/signup.jpg");
+	background-repeat: no-repeat;
+	background-size: 1367px 660px; 
+}
+.topcontainer{
+			position: fixed;
+			margin-top: -10px;
+			margin-left: -10px;
+			margin-right: 0px;
+			background-color: #f0f5f5;
+			width: 150%;
+			height: 65px;
+			font-family: sans-serif;
+			padding-bottom: 7px;
+			background-position: top;
+		}
+		.signbox{
+	border:0px groove #e0e0d1;
+	border-radius: 3%;
+	width: 30%;
+	margin-top:100px;
+	background-color: #404040;
+	background-position: top;
+	position:absolute;
+	margin-left: 385px;
+	z-index: 100;
+	color:white;
+}
+#signout{
+	display: inline;
+	border:0px solid #008ae6;
+	background-color:  #00cc66;
+	color: white;
+	margin-right: 10px;
+	border-radius: 10%;
+	padding: 7px;
+}
+.input{
+	background-color: #666666;
+	border:0px;
+	border-radius: 4%;
+	padding:5px;
+	padding-right: 10px;
+	color: white;
+	font-size: 110%;
+}
+h2{
+	background-color: #666666;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin: 0px;
+	border-top-right-radius: 3%;
+	border-top-left-radius: 3%;
+}
+.submit{
+	background-color: #009933;
+	padding:10px;
+	border:0px groove white;
+	border-radius:5%;
+	color: white;
+	padding-right: 30px;
+	padding-left: 30px;
+	font-size: 120%;
+}
+.topcontainer{
+	position: fixed;
+	margin-top: -40px;
+	margin-left: -10px;
+	margin-right: 0px;
+	background-color: #404040;
+	width: 150%;
+	height: 65px;
+	font-family: sans-serif;
+	padding-bottom: 7px;
+	background-position: top;
+	color: white;
+}
+a{
+	text-decoration: none;
+	color: #0099ff;
+	font-size: 120%;
+	display: inline;
+}
+li{
+	list-style-type: none;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-left: 50px;
+	display: inline;
+}
+#home{
+	padding-right: 15px; 
+	margin-left: -40px;
+	color: #0099ff;
+	display: inline;
+}
+.sign{
+	display: inline;
+	margin-left:400px;
+}
+#signup,#signin{
+	display: inline;
+	border:0px solid #008ae6;
+	background-color:  #00cc66;
+	color: white;
+	margin-right: 10px;
+	border-radius: 10%;
+	padding: 7px;
+
+}
+#signin{
+	padding: 6px;
+	font-size: 115%;
+}
+		a{
+			text-decoration: none;
+			color: #0099ff;
+			font-size: 120%;
+			display: inline;
+		}
+		.menu{
+			list-style-type: none;
+			padding-left: 0px;
+			padding-right: 0px;
+			margin-left: 50px;
+			display: inline;
+		}
+		#home{
+			padding-right: 15px; 
+			margin-left: -40px;
+			color: #0099ff;
+			display: inline;
+		}
+		#download{
+			text-decoration: underline;
+		}
+		.sign{
+			display: inline;
+			margin-left:400px;
+		}
+		#signup,#signin{
+			display: inline;
+			border:0px solid #008ae6;
+			background-color:  #00cc66;
+			color: white;
+			margin-right: 10px;
+			border-radius: 10%;
+			padding: 7px;
+
+		}
+		.midcontainer{
+			position: absolute;
+			margin: 100px;
+			margin-top: 100px;
+			float: right;
+		}
+		.list{
+			padding-left: 0px;
+			padding-right: 0px;
+			margin-left: 50px;
+		}
+		.info{
+			margin-left: 330px;
+		}
+		img{
+			width: 26%;
+			float: left;
+			border:5px solid #e0e0d1;
+			border-radius: 4%;
+		}
+		.botcontainer{
+			background-color: #262626;
+			position: absolute;
+			color: white;
+			padding: 7px;
+			margin-left: -10px;
+			margin-top: 577px;
+			width: 99.1%;
+		}

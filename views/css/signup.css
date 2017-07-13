@@ -1,0 +1,131 @@
+body{
+			font-family: sans-serif;
+			background-image: url("../images/signup.jpg");
+			background-repeat: no-repeat;
+			background-size: 1367px 660px;
+		}
+		.signbox{
+			border:0px groove #e0e0d1;
+			border-radius: 3%;
+			width: 30%;
+			margin-top:100px;
+			background-color: #404040;
+			background-position: top;
+			position:absolute;
+			margin-left: 470px;
+			z-index: 100;
+			color:white;
+		}
+		.input{
+			background-color: #666666;
+			border:0px;
+			border-radius: 4%;
+			padding:5px;
+			padding-right: 10px;
+			color: white;
+			font-size: 110%;
+		}
+		#h2{
+			background-color: #666666;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			margin: 0px;
+			border-top-right-radius: 3%;
+			border-top-left-radius: 3%;
+		}
+		.submit{
+			background-color: #009933;
+			padding:10px;
+			border:0px groove white;
+			border-radius:5%;
+			color: white;
+			padding-right: 30px;
+			padding-left: 30px;
+			font-size: 120%;
+		}
+		.topcontainer{
+			position: fixed;
+			margin-top: -40px;
+			margin-left: -10px;
+			margin-right: 0px;
+			background-color: #f0f5f5;
+			width: 150%;
+			height: 65px;
+			font-family: sans-serif;
+			padding-bottom: 7px;
+			background-position: top;
+		}
+		a{
+			text-decoration: none;
+			color: #0099ff;
+			font-size: 120%;
+			display: inline;
+		}
+		li{
+			list-style-type: none;
+			padding-left: 0px;
+			padding-right: 0px;
+			margin-left: 50px;
+			display: inline;
+		}
+		#home{
+			padding-right: 15px; 
+			margin-left: -40px;
+			color: #002080;
+			display: inline;
+		}
+		.sign{
+			display: inline;
+			margin-left:400px;
+		}
+		#signin{
+			display: inline;
+			border:0px solid #008ae6;
+			background-color:  #00cc66;
+			color: white;
+			margin-right: 10px;
+			border-radius: 10%;
+			padding: 7px;
+			font-size: 115%;
+			margin-left:60px; 
+		}
+		.signup{
+			background-color: #994d4d;
+			width: 30%;
+			margin-top: 80px;
+			padding: 0px;
+			opacity: 0.88;
+			border-radius: 3%;
+			color: white;
+		}
+		.form2{
+			margin-top: 30px;
+			margin-left: -270px;
+		}
+		.input2{
+			margin-left: 240px;
+			border:0px;
+			border-radius: 4%;
+			padding:5px;
+			padding-right: 100px;
+			background-color: #bb7777;
+			color: white;
+			font-size: 110%;
+		}
+		#btn{
+			margin-left: 270px;
+			border:0px;
+			padding: 8px;
+			font-size: 120%;
+			border-radius: 5%;
+			background-color: #0088cc;
+			color: white;
+		}
+		#h22{
+			background-color: #bb7777;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			margin: 0px;
+			border-top-right-radius: 3%;
+			border-top-left-radius: 3%;
+		}

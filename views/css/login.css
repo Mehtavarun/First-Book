@@ -1,0 +1,138 @@
+body{
+font-family: sans-serif;
+	background-image: url("../images/signup.jpg");
+	background-repeat: no-repeat;
+	background-size: 1367px 660px;
+}
+.topcontainer{
+	position: fixed;
+	margin-top: -120px;
+	margin-left: -10px;
+	margin-right: 0px;
+	background-color: #f0f5f5;
+	width: 150%;
+	height: 65px;
+	font-family: sans-serif;
+	padding-bottom: 7px;
+	background-position: top;
+}
+a{
+	text-decoration: none;
+	color: #0099ff;
+	font-size: 120%;
+	display: inline;
+}
+#notes{
+	margin-left: 10px;
+}
+#textnotes{
+	padding: 5px;
+}
+#notesbutton1{
+	margin-left: 10px;
+}
+#notesbutton2{
+    margin-left: 20px;  
+}
+#notesbutton3{
+    float: right;
+    margin-right: 80px; 
+    margin-top: -39px; 
+}
+#newli a{
+	list-style-type: decimal;
+	text-decoration: underline;
+	color: blue;
+}
+li{
+	list-style-type: none;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-left: 50px;
+	display: inline;
+}
+ol{
+	float:right;
+	margin-right: -400px;
+	margin-top: -340px;
+	border:3px groove brown;
+	height: 190px;
+	width: 40%;
+	overflow: hidden;
+}
+#home{
+	padding-right: 15px; 
+	margin-left: -40px;
+	color: #002080;
+	display: inline;
+}
+.sign{
+	display: inline;
+	margin-left:400px;
+}
+#signout{
+	display: inline;
+	border:0px solid #008ae6;
+	background-color:  #00cc66;
+	color: white;
+	margin-right: 10px;
+	border-radius: 10%;
+	padding: 7px;
+}
+.main{
+	width: 50%;
+	margin:100px;
+	margin-left: 200px;
+	padding: 10px;
+	font-family: sans-serif;
+	border:3px groove brown;
+	border-radius: 5%;
+	opacity: 0.7;
+}
+.bot{
+	height: 280px;
+}
+.top{
+	padding:20px;
+}
+.one{
+	padding: 10px;
+	height: 220px;
+}
+.main button{
+	border:0px;
+	padding: 10px;
+	margin-left: 0px;
+	border-radius: 5%;
+	background-color: #607d8b;
+}
+.two{
+	height: 200px;
+}
+p{
+	margin-left: 40px; 
+}
+#btn5,#btn6{
+	background-color: #607d8b;
+	border-radius: 5%;
+	margin-left: 180px; 
+}
+.form{
+	margin: 40px;
+	border:2px groove brown;
+	width: 50%;
+	margin-left: 30px;
+	margin-top: 30px;
+	padding: 20px;
+	border-radius: 3%;
+}
+.form button{
+	background-color: #607d8b;
+	margin-left: 100px;
+}
+.three{
+	margin: 30px;
+}
+#btn4{
+	margin-left: 120px;
+}
