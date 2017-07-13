@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Account Info</title>
+		<link rel="stylesheet" type="text/css" href="css/login.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src = "/socket.io/socket.io.js"></script>
+		<script>
+			$(function(){
+				var socket = io();
+
+				$("#btn2").css("box-shadow","10px 10px 5px #888888");
+				$("#btn3").css("box-shadow","10px 10px 5px #888888");
+				$("#signin").click(function(){
+					$(".signbox").slideDown();
+					$(".topcontainer").animate({
+            			opacity: '0.3'
+					});
+					$(".main").animate({
+            			opacity: '0.3'
+					});
+				});
+				$("body").on('dblclick',function(){
+					$(".signbox").fadeOut();
+					$(".topcontainer").animate({
+            			opacity: '1'
+					});
+					$(".main").animate({
+            			opacity: '1'
+					});
+				});
+				$("#btn1").click(function(){
+					$(".one").slideDown();
+					$(".two").hide();
+					$(".three").hide();
+					$(this).css("box-shadow","");
+					$("#btn2").css("box-shadow","10px 10px 5px #888888");
+					$("#btn3").css("box-shadow","10px 10px 5px #888888");
+				});
+				$("#btn2").click(function(){
+					$(".two").slideDown();
+					$(".three").hide();
+					$(".one").hide();
+					$(this).css("box-shadow","");
+					$("#btn1").css("box-shadow","10px 10px 5px #888888");
+					$("#btn3").css("box-shadow","10px 10px 5px #888888");
+				});
+				$("#btn3").click(function(){
+					$(".three").slideDown();
+					$(".two").hide();
+					$(".one").hide();
+					$(this).css("box-shadow","");
+					$("#btn2").css("box-shadow","10px 10px 5px #888888");
+					$("#btn1").css("box-shadow","10px 10px 5px #888888");
+				});
+				$("#btn5").click(function(){
+					$(".form").fadeIn();
+				})
+				$(".form").submit(function(){
+					alert('Email Changed');
+					$(".form").fadeOut();
+					socket.emit('emailchange', $('#newemail').val());
+				});
+
+				$(".newform").submit(function(){
+
+					var pass = {
+						pass1: $("#pass1").val(),
+						pass2: $("#pass2").val(),
+						pass3: $("#pass3").val()
+					}
+
+					if(pass.pass2 == pass.pass3){
+						socket.emit('passchange', pass);
+					}
+					else{
+						alert('Fill your new password correctly');
+					}
+				});
+
+				$("#notes").submit(function(){
+					var v = $("#filename").val();
+					socket.emit('files',v);
+				});
+
+				socket.on('newfile',function(data){
+					var file = JSON.parse(data);
+					$("#openfiles").text('');
+					for( i=0; i<file.length; i++ ){
+						var str = '<li id="newli"><a href="/files/' + file[i] + '">' + file[i] + '</a></li><br>';
+						$(str).hide().prependTo($("#openfiles")).slideDown();
+					}
+				});
+
+			})
+		</script>
+	</head>
+	<body>
+		<div class="topcontainer">
+			<ul>
+				<li><a href="/"><h1 id="home">First Book</h1></a></li>
+				<li><a href="/">Books</a></li>
+				<li><a href="/contact">Contact Us</a></li>
+				<li><a href="/about">About Us</a></li>
+				<div class="sign">
+					<li>
+						<a href="/logout" id="signout">Sign Out</a>
+					</li>
+				</div>
+			</ul>
+		</div>
+	<div class="main">
+		<div class="top">
+			<button id="btn1">Create Notes</button>
+			<button id="btn2">User Info</button>
+			<button id="btn3">Change Password</button>
+		</div>
+		<div class="bot">
+			<div class="one">
+				<form id="notes" action="http://localhost:6500/download/files">
+					<textarea name="textnotes" id="textnotes" cols="50" rows="10" required></textarea><br><br>
+					File Name: <input type="text" name="filename" id="filename" required>(with ext.)
+					<button type="submit" id="notesbutton1">Save</button>
+					<button type="reset" id="notesbutton2">Reset</button>
+				</form>
+				<ol id="openfiles"></ol>
+			</div>
+
+			<div class="two"  hidden>
+				<p><b>Username</b>:Varun</p>
+				<p><b>Email</b>:Email
+				<button id="btn5">Change Email Id</button></p>
+					<form class="form" method="post" action="http://localhost:6500/signin" hidden>
+						New Email <input type="Email" name="email" required class="input" id="newemail"><br><br>
+						Are you sure?
+						<input type="checkbox" required> Yes <br><br>
+						<button id="btn4" type="submit">Change</button><br>
+					</form>
+			</div>
+
+			<div class="three" hidden>
+				<form method="post" action="/signin" class="newform" >
+					Old Password: <input type="Password" name="pass1" class="input2" id="pass1" required><br><br>
+					New Password: <input type="Password" name="pass2" class="input2" id="pass2" required><br><br>
+					Retype Password: <input type="Password" name="pass3" class="input2" id="pass3" required><br><br>
+					<button id="btn6" type="submit">Change</button><br><br>
+				</form>
+			</div>
+		</div>
+	</div>
+	</body>
+</html>

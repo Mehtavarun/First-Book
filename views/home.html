@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Welcome to First Book</title>
+		<link rel="stylesheet" type="text/css" href="css/home.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src = "/socket.io/socket.io.js"></script>
+		<script>
+			$(function(){
+				$("#signout").hide();
+				var socket = io();
+				$("#signin").click(function(){
+					$(".signbox").slideDown();
+					$(".topcontainer").animate({
+            			opacity: '0.3'
+					});
+					$(".midcontainer").animate({
+            			opacity: '0.3'
+					});
+					$(".botcontainer").animate({
+            			opacity: '0.3'
+					});
+				});
+				$("body").on('dblclick',function(){
+					$(".signbox").fadeOut();
+					$(".topcontainer").animate({
+            			opacity: '1'
+					});
+					$(".midcontainer").animate({
+            			opacity: '1'
+					});
+					$(".botcontainer").animate({
+            			opacity: '1'
+					});
+				});
+
+				socket.on('loggedin',function(){
+					$("#signin").hide();
+					$("#signup").hide();
+					$("#signout").show();
+				});
+				socket.on('loggedout',function(){
+					$("#signin").show();
+					$("#signup").show();
+					$("#signout").hide();
+				});
+			})
+		</script>
+	</head>
+	<body>
+	<div class="signbox" hidden>
+			<center>
+				<h2 id="signhead">Sign In</h2><br>
+				<form action="http://localhost:6500/signin" method="post">
+					Username/Email: &nbsp;&nbsp;&nbsp;	
+					<input type="text" name="username" required class="input"><br><br>
+					Password: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="password" name="password" required class="input"><br><br><br>
+					<button type="submit" class="submit">Sign In</button><br><br><br>
+				</form>
+			</center>
+		</div>
+		<br>
+		<div class="topcontainer">
+			<ul>
+				<li><a href="/"><h1 id="home">First Book</h1></a></li>
+				<li><a href="/">Books</a></li>
+				<li><a href="/contact">Contact Us</a></li>
+				<li><a href="/aboutus">About Us</a></li>
+				<div class="sign">
+					<li>
+						<a href="/signup" id="signup">Sign Up</a>
+						<button id="signin">Sign In</button>
+						<a href="/logout" id="signout" hidden>Sign Out</a>
+					</li>
+				</div>
+			</ul>
+		</div>
+		<div class="midcontainer">
+			<div class="bk1 book">
+				<a href=""><img src="images/se.jpg" id="img1"></a>
+				<div class="bookdetails">
+					<h3>Software Engineering</h3>
+					<p>This is guide to Software engg...</p>
+					<a href="/books/se" class="details">Details</a>
+				</div>
+			</div>
+			<div class="bk2 book">
+				<a href=""><img src="images/ds.jpg" id="img2"></a>
+				<div class="bookdetails">
+					<h3>Discrete Mathematics</h3>
+					<p>Maths made easy and Interesting...</p>
+					<a href="/books/ds" class="details">Details</a>
+				</div>
+			</div>
+		</div>
+		<center>
+			<div class="botcontainer">
+				<h5>Copyrights to Varun Mehta</h5>
+			</div> 
+		</center>
+	</body>
+</html>
