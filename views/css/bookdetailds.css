@@ -6,29 +6,16 @@ body{
 }
 .topcontainer{
 	position: fixed;
-	margin-top: -10px;
+	margin-top: -40px;
 	margin-left: -10px;
 	margin-right: 0px;
-	background-color: #f0f5f5;
+	background-color: #039be5;
 	width: 150%;
 	height: 65px;
 	font-family: sans-serif;
 	padding-bottom: 7px;
 	background-position: top;
 	}
-/*	.topcontainer{
-	position: fixed;
-	margin-top: -40px;
-	margin-left: -10px;
-	margin-right: 0px;
-	background-color: #404040;
-	width: 150%;
-	height: 65px;
-	font-family: sans-serif;
-	padding-bottom: 7px;
-	background-position: top;
-	color: white;
-}*/
 .signbox{
 	border:0px groove #e0e0d1;
 	border-radius: 3%;
@@ -79,7 +66,7 @@ body{
 }
 a{
 	text-decoration: none;
-	color: #0099ff;
+	color: white;
 	font-size: 120%;
 	display: inline;
 }
@@ -93,7 +80,7 @@ li{
 #home{
 	padding-right: 15px; 
 	margin-left: -40px;
-	color: #0099ff;
+	color: white;
 	display: inline;
 }
 .sign{
@@ -108,13 +95,11 @@ li{
 	margin-right: 10px;
 	border-radius: 10%;
 	padding: 7px;
-
 }
 #signin{
 	padding: 6px;
 	font-size: 115%;
 }
-
 .menu{
 	list-style-type: none;
 	padding-left: 0px;
@@ -122,14 +107,9 @@ li{
 	margin-left: 50px;
 	display: inline;
 }
-#home{
-	padding-right: 15px; 
-	margin-left: -40px;
-	color: #0099ff;
-	display: inline;
-}
 #download{
 	text-decoration: underline;
+	color:blue;
 }
 .sign{
 	display: inline;
@@ -143,7 +123,6 @@ li{
 	margin-right: 10px;
 	border-radius: 10%;
 	padding: 7px;
-
 }
 .midcontainer{
 	position: absolute;

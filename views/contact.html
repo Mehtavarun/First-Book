@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Support</title>
+		<link rel="stylesheet" type="text/css" href="css/contact.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src = "/socket.io/socket.io.js"></script>
+		<script>
+			$(function(){
+				$("#signout").hide();
+				var socket = io();
+				$("#btn3").css("box-shadow","0px 10px 5px #888888");
+				$("#signin").click(function(){
+					$(".signbox").slideDown();
+					$(".topcontainer").animate({
+            			opacity: '0.7'
+					});
+					$(".main").animate({
+            			opacity: '0.7'
+					});
+				});
+				$("body").on('dblclick',function(){
+					$(".signbox").fadeOut();
+					$(".topcontainer").animate({
+            			opacity: '1'
+					});
+					$(".main").animate({
+            			opacity: '1'
+					});
+				});
+				$("#btn3").click(function(){
+					$(".message").slideDown();
+					$(".chat").slideUp();
+					$("#btn4").css("background-color","#00695c");
+					$("#btn4").css("box-shadow","0px 10px 5px #888888");
+					$("#btn3").css("background-color","#424242");
+					$("#btn3").css("box-shadow","");
+				});
+				$("#btn4").click(function(){
+					$(".message").slideUp();
+					$(".chat").slideDown();
+					$("#btn3").css("background-color","#00695c");
+					$("#btn3").css("box-shadow","0px 10px 5px #888888");
+					$("#btn4").css("background-color","#424242");
+					$("#btn4").css("box-shadow","");
+				});
+
+				$("#btn1").click(function(){
+					$('message').hide();
+					$('chat').show();
+					$("#btn3").css("background-color","#00695c");
+					$("#btn3").css("box-shadow","0px 10px 5px #888888");
+					$("#btn4").css("background-color","#424242");
+					$("#btn4").css("box-shadow","");
+				});
+
+				
+				$(".form2").submit(function(){
+					$("h3").show();
+				});
+
+				var socket = io();
+
+				$(".form").submit(function(){
+
+					var ms = $(".textarea1").val();
+					socket.emit('msg',ms);
+				});
+
+				var rep = ['Hi! Nice to meet you','How may I help you?','So you have this problem','Please discuss in little detail','Hmm let me see how I ll help you','One Sec solving your problem','One Sec solving your problem','One Sec solving your problem','One Sec solving your problem','One Sec solving your problem','One Sec solving your problem','One Sec solving your problem','One Sec solving your problem'];
+
+				socket.on('newmsg', function(messages){
+
+					var mesg = JSON.parse(messages);
+					for( i=0; i<mesg.length; i++){
+						var str = '<li id= "user">' + 'User: ' + mesg[i] + '</li><br><li id = "new">' + rep[i] + ' :Admin' + '</li><br>';
+						$(str).prependTo($('#chatmsg')).slideDown();
+					}
+
+				});
+				socket.on('loggedin',function(){
+					$("#signin").hide();
+					$("#signup").hide();
+					$("#signout").show();
+				});
+				socket.on('loggedout',function(){
+					$("#signin").show();
+					$("#signup").show();
+					$("#signout").hide();
+				});
+			})
+		</script>
+	</head>
+	<body>
+	<div class="signbox" hidden>
+			<center>
+				<h2>Sign In</h2><br>
+				<form action="http://localhost:6500/signin" method="post">
+					Username/Email: &nbsp;&nbsp;&nbsp;	
+					<input type="text" name="username" required class="input"><br><br>
+					Password: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="password" name="password" required class="input"><br><br><br>
+					<button type="submit" class="submit">Sign In</button><br><br><br>
+				</form>
+			</center>
+		</div>
+		<br>
+		<div class="topcontainer">
+			<ul>
+				<li><a href="/"><h1 id="home">First Book</h1></a></li>
+				<li><a href="/">Books</a></li>
+				<li><a href="/contact">Contact Us</a></li>
+				<li><a href="/aboutus">About Us</a></li>
+				<div class="sign">
+					<li>
+						<a href="/signup" id="signup">Sign Up</a>
+						<button id="signin">Sign In</button>
+						<a href="/logout" id="signout" hidden>Sign Out</a>
+					</li>
+				</div>
+			</ul>
+		</div>
+
+		<div class="main">
+
+			<div class="opt">
+				<button id="btn3">Support via Email</button>
+				<button id="btn4" class="active">Chat Support</button>
+			</div>
+
+			<div class="inside">
+
+				<div class="message"  hidden>
+					<form method="get" action="http://localhost:6500/contact" class="form2">
+						Name: <input type="text" name="name" class="input2"><br><br>
+						Email: &nbsp;<input type="email" name="email" required class="input2"><br><br>
+						Message:<br><textarea name="mess" rows="4" cols="28" class="textarea2" required></textarea><br><br>
+						<button type="submit" id="btn2">Submit</button><br><br><br>
+					</form>
+					<h3 hidden>Thanks we will <br> contact you soon.</h3>
+				</div>
+
+				<div class="chat">
+					<div class = "innerchat">
+						<ol id="chatmsg"></ol>
+					</div>
+					<div class="text">
+						<form class="form">
+							<textarea name="chat" class="textarea1" cols="40" rows="3"></textarea>
+							<button type="submit" value="submit" id="btn1">Submit</button><br><br>
+						</form>
+					</div>
+				</div>	
+
+			</div>
+		</div>
+	</body>
+</html>

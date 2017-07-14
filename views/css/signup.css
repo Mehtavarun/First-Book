@@ -48,7 +48,7 @@ body{
 			margin-top: -40px;
 			margin-left: -10px;
 			margin-right: 0px;
-			background-color: #f0f5f5;
+			background-color: #039be5;
 			width: 150%;
 			height: 65px;
 			font-family: sans-serif;
@@ -57,7 +57,7 @@ body{
 		}
 		a{
 			text-decoration: none;
-			color: #0099ff;
+			color: white;
 			font-size: 120%;
 			display: inline;
 		}
@@ -71,7 +71,7 @@ body{
 		#home{
 			padding-right: 15px; 
 			margin-left: -40px;
-			color: #002080;
+			color: white;
 			display: inline;
 		}
 		.sign{
