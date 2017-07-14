@@ -44,6 +44,8 @@
 					$(this).css("box-shadow","");
 					$("#btn1").css("box-shadow","10px 10px 5px #888888");
 					$("#btn3").css("box-shadow","10px 10px 5px #888888");
+
+					socket.emit('userinfo');
 				});
 				$("#btn3").click(function(){
 					$(".three").slideDown();
@@ -127,8 +129,8 @@
 			</div>
 
 			<div class="two"  hidden>
-				<p><b>Username</b>:Varun</p>
-				<p><b>Email</b>:Email
+				<p><b>Username</b>:{{username}}</p>
+				<p><b>Email</b>:{{uemail}}
 				<button id="btn5">Change Email Id</button></p>
 					<form class="form" method="post" action="http://localhost:6500/signin" hidden>
 						New Email <input type="Email" name="email" required class="input" id="newemail"><br><br>

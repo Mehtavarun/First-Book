@@ -57,7 +57,7 @@ h2{
 	margin-top: -40px;
 	margin-left: -10px;
 	margin-right: 0px;
-	background-color: #404040;
+	background-color: #039be5;
 	width: 150%;
 	height: 65px;
 	font-family: sans-serif;
@@ -67,7 +67,7 @@ h2{
 }
 a{
 	text-decoration: none;
-	color: #0099ff;
+	color: white;
 	font-size: 120%;
 	display: inline;
 }
@@ -81,7 +81,7 @@ li{
 #home{
 	padding-right: 15px; 
 	margin-left: -40px;
-	color: #0099ff;
+	color: white;
 	display: inline;
 }
 .sign{
