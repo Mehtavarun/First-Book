@@ -53,12 +53,17 @@ li{
 }
 ol{
 	float:right;
-	margin-right: -400px;
+	margin-right: -420px;
 	margin-top: -340px;
 	border:3px groove brown;
-	height: 190px;
-	width: 40%;
+	height: 250px;
+	width: 50%;
+	list-style-type: decimal;
 	overflow: hidden;
+}
+ol li{
+	list-style-type: decimal;
+	margin-left: -20px;
 }
 #home{
 	padding-right: 15px; 
