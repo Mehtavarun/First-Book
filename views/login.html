@@ -57,7 +57,7 @@
 				});
 				$("#btn5").click(function(){
 					$(".form").fadeIn();
-				})
+				});
 				$(".form").submit(function(){
 					alert('Email Changed');
 					$(".form").fadeOut();
@@ -70,7 +70,7 @@
 						pass1: $("#pass1").val(),
 						pass2: $("#pass2").val(),
 						pass3: $("#pass3").val()
-					}
+					};
 
 					if(pass.pass2 == pass.pass3){
 						socket.emit('passchange', pass);
@@ -80,11 +80,11 @@
 					}
 				});
 
-				$("#notes").submit(function(){
+			/*	$("#notes").submit(function(){
 					var v = $("#filename").val();
 					socket.emit('files',v);
 				});
-
+*/
 				socket.on('newfile',function(data){
 					var file = JSON.parse(data);
 					$("#openfiles").text('');
@@ -93,6 +93,7 @@
 						$(str).hide().prependTo($("#openfiles")).slideDown();
 					}
 				});
+				
 
 			})
 		</script>
