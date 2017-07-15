@@ -8,11 +8,5 @@ module.exports = function(io, messages, files){
 
 		socket.emit('newmsg', JSON.stringify(messages));
 		socket.broadcast.emit('newmsg', JSON.stringify(messages));
-/*
-		socket.on('files',(fl)=>{
-			files.push(fl);
-		});
-
-		socket.emit('newfile',JSON.stringify(files));*/
 	});
 }
