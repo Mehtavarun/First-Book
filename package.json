@@ -15,7 +15,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "hogan-express": "^0.5.2",
-    "mongodb": "^2.2.29",
+    "mongodb": "^2.2.33",
     "mysql": "^2.13.0",
     "querystring": "^0.2.0",
     "socket.io": "^2.0.3"

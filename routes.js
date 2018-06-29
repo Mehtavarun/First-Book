@@ -2,7 +2,7 @@ module.exports = function(app, urlencodedParser, mongo, session, fs, io){
 
 	app.use(session({secret:'secret'}));
 
-	var url = 'mongodb://localhost:27017/yeah';
+	var url = 'mongodb://varun:password@ds115352.mlab.com:15352/chat';
 	var u_name, u_user, u_email, u_pass, u_addr;
 	var events = require('events');
 	var eventEmitter = new events.EventEmitter();
